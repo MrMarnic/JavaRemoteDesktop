@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/monitors/monitors.js"></script>
+    <link rel="stylesheet" th:href="@{/monitors/style.css}">
+</head>
+<body>
+    <head>
+        <div class="topbar">
+            <h1 th:text="${pcname}"></h1>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </head>
+    <ul th:each="mon: ${monitors}" class="monList">
+        <li class="mon">
+            <a th:href="${mon.link()}"><img th:src="${mon.base64()}" alt="" th:attr="data-mon-index=${mon.index}" onclick="onMonClick(this)" draggable="false"></a>
+            <h1 th:text="${mon.index}"></h1>
+            <h1 th:text="${mon.formatedSize}"></h1>
+        </li>
+    </ul>
+</body>
+</html>

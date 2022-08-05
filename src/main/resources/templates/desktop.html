@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/desktop/desktop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <!--link rel="stylesheet" href="/static/desktop/desktop.css"-->
+    <link rel="stylesheet" th:href="@{/desktop/desktop.css}">
+</head>
+<body>
+    <head>
+        <div class="topbar">
+            <a href="/monitors"><button>Back</button></a>
+            <h1 th:text="${openedpath.path}"></h1>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </head>
+    <div class="stage">
+        <img src="https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg" alt="" id="screen" draggable="false">
+    </div>
+    <div class="bootombar">
+        <ul class="toolbar">
+            <li>
+                <img th:src="@{/desktop/images/edit.png}" alt="" id="editBtn" draggable="false">
+                <img th:src="@{/desktop/images/noedit.png}" alt="" id="noEditBtn" class="hidden" draggable="false">
+            </li>
+            <li>
+                <input type="text" name="" id="">
+                <img th:src="@{/desktop/images/send.png}" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
