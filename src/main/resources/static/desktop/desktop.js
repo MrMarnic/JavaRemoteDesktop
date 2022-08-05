@@ -8,6 +8,10 @@ window.onload = function() {
     const monIndex = urlParams.get("monIndex");
     var edit = true;
 
+
+    /**
+     *  Connects to the server and sends connect message -> initiates screen sharing protocol
+     */
     stompClient.connect({},function(frame) {
         console.log("CONNECTED!");
         stompClient.subscribe("/user/desktop/screen", function(greet) {
